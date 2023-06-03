@@ -2,9 +2,9 @@ import React from 'react'
 
 export default function Home() {
   return (
-    <section className="w-[800px] mx-auto py-10">
-      <h1 className="text-2xl">Our vision and mission</h1>
-      <p className="mt-5 text-lg text-justify leading-5">
+    <section className="xs:w-[370px] md:w-[800px] mx-auto py-10">
+      <h1 className="xs:text-xl md:text-2xl">Our vision and mission</h1>
+      <p className="mt-5 xs:text-md md:text-lg text-justify leading-5">
         At Deeh we aim to develop an understanding of our origin. Deeh
         Foundation is committed to the study and promotion of the rich cultural
         traditions and craftsmanship of the vanishing Ghumantu/Vimukt community
@@ -23,7 +23,7 @@ export default function Home() {
         knowledge and art oriented skills, it will cooperate at the campaign
         level in finding self-employment opportunities.
       </p>
-      <p className="hinditext mt-3 text-[1.22rem] text-justify leading-[1.55rem]">
+      <p className="hinditext mt-3  md:text-[1.22rem] text-justify xs:leading-[1.55rem] md:leading-[2.2rem]">
         डीह की संकल्पना अपने मूल जड़ों को जानने व समझने से जुड़ी हुई है। भारतीय
         सामाज के आरण्यक ,ग्राम्य व नागर समुदायों के समानांतर घुमंतु /विमुक्त
         समुदाय की विलुप्त होती समृद्ध सांस्कृतिक परंपराओं व शिल्प कलाओं के

@@ -2,27 +2,33 @@ import React from 'react'
 
 export default function Contact() {
   return (
-    <div className="w-[800px] mx-auto mt-10 p-10">
+    <div className="xs:w-[370px] md:w-[800px] mx-auto mt-10 xs:mb-10 md:mb-0 xs:p-2 md:p-10">
       <table className="mx-auto">
         <thead className="p-4 border-b-2 border-zinc-600 border-solid">
-          <td className="p-4 text-center">Call</td>
-          <td className="p-4 text-center border-x-2 border-zinc-600 border-solid">
+          <td className="xs:p-1 md:p-4 text-xs text-center">Call</td>
+          <td className="xs:p-1 md:p-4 text-xs text-center border-x-2 border-zinc-600 border-solid">
             Email
           </td>
-          <td className="px-8 pt-4 text-center">Mailing Address</td>
+          <td className="xs:p-1 md:p-4 text-xs  pt-4 text-center">
+            Mailing Address
+          </td>
         </thead>
         <tbody>
-          <td className="px-8 py-4 text-center">9868123940</td>
-          <td className="px-8 py-4 text-center border-x-2 border-zinc-600 border-solid">
+          <td className="xs:px-2 md:px-8 py-4 text-center text-xs">
+            9868123940
+          </td>
+          <td className="xs:px-2 md:px-8 py-4 text-center text-xs border-x-2 border-zinc-600 border-solid">
             deehfoundation22@gmail.com
           </td>
-          <td className="px-2 py-4 text-center">Burari</td>
+          <td className="xs:px-2 md:px-2 py-4 text-center text-xs">Burari</td>
         </tbody>
       </table>
 
       <div className="flex flex-col">
-        <p className="mx-auto mt-20 mb-10">
-          ~~~~~~~~~~~~~ Drop Us a Line, Let Us Know What You Think ~~~~~~~~~~~~~
+        <p className="mx-auto mt-20 mb-10 text-md">
+          <span className="xs:hidden md:inline">~~~~~~~~~~~~~</span>
+          <span> Drop Us a Line, Let Us Know What You Think</span>
+          <span className="xs:hidden md:inline"> ~~~~~~~~~~~~~</span>
         </p>
         <form method="get" className="border border-solid p-10 rounded-3xl">
           <div className="flex mb-8">
@@ -63,7 +69,7 @@ export default function Contact() {
           <input
             type="submit"
             value="submit"
-            className="border border-solid border-zinc-600 rounded-md p-2 mt-4 ml-[545px]"
+            className="border border-solid border-zinc-600 rounded-md p-2 mt-4 mx-auto"
           />
         </form>
       </div>

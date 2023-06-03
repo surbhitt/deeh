@@ -17,8 +17,8 @@ export default function App() {
           <Route path="/gallery" element={<Gallery />} />
         </Routes>
       </Router>
-      <hr className="border-primary border-solid w-[800px] mx-auto" />
-      <footer className="hinditext text-xs text-center m-1">
+      <hr className="border-primary border-solid xs:w-[370px] md:w-[800px] mx-auto" />
+      <footer className="hinditext text-xs text-center mt-2 mb-5">
         मूल का मुल्य
       </footer>
     </>
