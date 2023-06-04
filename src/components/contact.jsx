@@ -3,7 +3,7 @@ import React from 'react'
 export default function Contact() {
   return (
     <div className="xs:w-[370px] md:w-[800px] mx-auto mt-10 xs:mb-10 md:mb-0 xs:p-2 md:p-10">
-      <table className="mx-auto">
+      <table className="mx-auto rounded-lg bg-tertiary-dark bg-opacity-50">
         <thead className="p-4 border-b-2 border-zinc-600 border-solid">
           <td className="xs:p-1 md:p-4 text-xs text-center">Call</td>
           <td className="xs:p-1 md:p-4 text-xs text-center border-x-2 border-zinc-600 border-solid">
@@ -30,10 +30,13 @@ export default function Contact() {
           <span> Drop Us a Line, Let Us Know What You Think</span>
           <span className="xs:hidden md:inline"> ~~~~~~~~~~~~~</span>
         </p>
-        <form method="get" className="border border-solid p-10 rounded-3xl">
+        <form
+          method="get"
+          className="border border-solid p-10 rounded-3xl bg-tertiary-dark bg-opacity-50"
+        >
           <div className="flex mb-8">
             <div className="flex flex-col w-1/2">
-              <label for="name" className="text-sm text-zinc-600 font-medium">
+              <label for="name" className="text-sm font-medium">
                 Name
               </label>
               <input
@@ -44,7 +47,7 @@ export default function Contact() {
               />
             </div>
             <div className="flex flex-col w-1/2">
-              <label for="email" className="text-sm text-zinc-600 font-medium">
+              <label for="email" className="text-sm font-medium">
                 Email
               </label>
               <input
@@ -55,7 +58,7 @@ export default function Contact() {
               />
             </div>
           </div>
-          <label for="message" className="text-sm text-zinc-600 font-medium">
+          <label for="message" className="text-sm font-medium">
             Message
           </label>
           <br />

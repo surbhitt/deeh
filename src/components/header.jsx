@@ -3,11 +3,17 @@ import { Link } from 'react-router-dom'
 
 export default function Header() {
   return (
-    <div className="xs:w-[370px] md:w-[800px] mx-auto flex flex-col items-center">
-      <h1 className="xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold xs:p-4 md:p-6 tracking-[0.1em]">
-        DEEH Foundation
-      </h1>
-      <hr className="border-primary border-solid xs:w-[370px] md:w-[800px] mx-auto" />
+    <div className="xs:w-[370px] md:w-[900px] mx-auto flex flex-col items-center">
+      <div className="flex w-full mx-auto justify-center">
+        <img
+          src="/deehlogo.png"
+          className="h-14 xs:mt-4 lg:mt-5 rounded-full"
+        />
+        <h1 className="xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold xs:p-4 md:p-6 tracking-[0.1em]">
+          DEEH Foundation
+        </h1>
+      </div>
+      <hr className="border-primary border-solid xs:w-[370px] md:w-[900px] mx-auto" />
       <Navbar />
     </div>
   )
