@@ -5,22 +5,26 @@ export default function Contact() {
     <div className="xs:w-[370px] md:w-[800px] mx-auto mt-10 xs:mb-10 md:mb-0 xs:p-2 md:p-10">
       <table className="mx-auto rounded-lg bg-tertiary-dark bg-opacity-50">
         <thead className="p-4 border-b-2 border-zinc-600 border-solid">
-          <td className="xs:p-1 md:p-4 text-xs text-center">Call</td>
-          <td className="xs:p-1 md:p-4 text-xs text-center border-x-2 border-zinc-600 border-solid">
+          <td className="xs:p-1 md:p-4 text-xs md:text-base text-center">
+            Call
+          </td>
+          <td className="xs:p-1 md:p-4 text-xs md:text-base text-center border-x-2 border-zinc-600 border-solid">
             Email
           </td>
-          <td className="xs:p-1 md:p-4 text-xs  pt-4 text-center">
+          <td className="xs:p-1 md:p-4 text-xs md:text-base pt-4 text-center">
             Mailing Address
           </td>
         </thead>
         <tbody>
-          <td className="xs:px-2 md:px-8 py-4 text-center text-xs">
+          <td className="xs:px-2 md:px-8 py-4 text-center text-xs md:text-base">
             9868123940
           </td>
-          <td className="xs:px-2 md:px-8 py-4 text-center text-xs border-x-2 border-zinc-600 border-solid">
+          <td className="xs:px-2 md:px-8 py-4 text-center text-xs md:text-base border-x-2 border-zinc-600 border-solid">
             deehfoundation22@gmail.com
           </td>
-          <td className="xs:px-2 md:px-2 py-4 text-center text-xs">Burari</td>
+          <td className="xs:px-2 md:px-2 py-4 text-center text-xs md:text-base">
+            Burari
+          </td>
         </tbody>
       </table>
 
@@ -71,7 +75,7 @@ export default function Contact() {
           />
           <input
             type="submit"
-            value="submit"
+            value="send"
             className="border border-solid border-zinc-600 rounded-md p-2 mt-4 mx-auto"
           />
         </form>

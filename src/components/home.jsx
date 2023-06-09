@@ -1,11 +1,23 @@
-import React from 'react'
-
+import React, { useState, useEffect } from 'react'
+import './debug.css'
 export default function Home() {
   return (
-    <div>
+    <div className="relative">
+      <img
+        src="backgroundfloral.png"
+        style={{ clipPath: 'inset(0 50% 0 0)' }}
+        className="absolute z-[-1] top-1/2 left-[350px] opacity-70 h-96 md:hidden lg:inline"
+      />
+      <img
+        src="backgroundfloral.png"
+        style={{ clipPath: 'inset(0 0 0 50%)' }}
+        className="absolute z-[-1] top-1/2 right-[350px] opacity-70 h-96 md:hidden lg:inline"
+      />
       <Carousel />
       <section className="xs:w-[370px] md:w-[800px] mx-auto py-10">
-        <h1 className="xs:text-xl md:text-2xl">Our vision and mission</h1>
+        <h1 className="xs:text-xl md:text-2xl underline underline-offset-4">
+          Our vision and mission
+        </h1>
         <p className="mt-5 xs:text-md md:text-lg text-justify leading-5">
           At Deeh we aim to develop an understanding of our origin. Deeh
           Foundation is committed to the study and promotion of the rich
@@ -49,10 +61,161 @@ export default function Home() {
 }
 
 function Carousel() {
-  let images = {}
+  const [slideNum, setSlide] = useState(0)
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setSlide((slideNum + 1) % totSlides)
+    }, 3000)
+
+    return () => clearInterval(interval)
+  }, [slideNum])
+
+  let slides = [
+    {
+      name: 'img1',
+      link: 'assets/img1.webp',
+      loc: 'Madhya Pradesh',
+      desc: 'Heritage Site',
+      pos: 0,
+    },
+    {
+      name: 'img2',
+      link: 'assets/img2.webp',
+      loc: 'Madhya Pradesh',
+      desc: 'Directors addressal',
+      pos: 1,
+    },
+    {
+      name: 'img3',
+      link: 'assets/img3.webp',
+      loc: 'Madhya Pradesh',
+      desc: 'seminar',
+      pos: 2,
+    },
+    {
+      name: 'img4',
+      link: 'assets/img4.webp',
+      loc: 'Madhya Pradesh',
+      desc: 'Heritage Site',
+      pos: 3,
+    },
+    {
+      name: 'img5',
+      link: 'assets/img5.webp',
+      loc: 'Madhya Pradesh',
+      desc: 'Heritage Site',
+      pos: 4,
+    },
+  ]
+  let totSlides = 5
+  const leftArrow = () => {
+    setSlide((slideNum - 1 + totSlides) % totSlides)
+  }
+  const rightArrow = () => {
+    setSlide((slideNum + 1) % totSlides)
+  }
+
   return (
-    <div className="flex items-center bg-secondary rounded-xl bg-opacity-30 my-20 xs:w-[300px] md:w-[700px] h-[400px] mx-auto shadow-xl">
-      <img src="/assets/img1.webp" className="rounded-xl mx-auto" />
+    <div className="flex relative items-center justify-center bg-tertiary-light bg-opacity-40 rounded-xl my-20 xs:w-[300px] md:w-[700px] h-[400px] mx-auto shadow-xl">
+      <img
+        src="/sildeshowborder.png"
+        className="absolute z-[-1] w-full h-full rounded-xl"
+      />
+      <button onClick={leftArrow} className="absolute left-2">
+        <svg
+          width="40px"
+          height="40px"
+          viewBox="0 -4.5 20 20"
+          version="1.1"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          fill="#141414"
+          transform="rotate(270)"
+        >
+          <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+          <g
+            id="SVGRepo_tracerCarrier"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          ></g>
+          <g id="SVGRepo_iconCarrier">
+            <title>arrow_up [#141414]</title> <desc>Created with Sketch.</desc>
+            <defs> </defs>
+            <g
+              id="Page-1"
+              stroke="none"
+              stroke-width="1"
+              fill="none"
+              fill-rule="evenodd"
+            >
+              <g
+                id="Dribbble-Light-Preview"
+                transform="translate(-260.000000, -6684.000000)"
+                fill="#141414"
+              >
+                <g id="icons" transform="translate(56.000000, 160.000000)">
+                  <path
+                    d="M223.707692,6534.63378 L223.707692,6534.63378 C224.097436,6534.22888 224.097436,6533.57338 223.707692,6533.16951 L215.444127,6524.60657 C214.66364,6523.79781 213.397472,6523.79781 212.616986,6524.60657 L204.29246,6533.23165 C203.906714,6533.6324 203.901717,6534.27962 204.282467,6534.68555 C204.671211,6535.10081 205.31179,6535.10495 205.70653,6534.69695 L213.323521,6526.80297 C213.714264,6526.39807 214.346848,6526.39807 214.737591,6526.80297 L222.294621,6534.63378 C222.684365,6535.03868 223.317949,6535.03868 223.707692,6534.63378"
+                    id="arrow_up-[#141414]"
+                  ></path>
+                </g>
+              </g>
+            </g>
+          </g>
+        </svg>
+      </button>
+      {/* ------------------------------slide map-------------------------------*/}
+      {slides.map((img, i) => (
+        <div class={img.pos == slideNum ? 'flex flex-col' : 'hidden'}>
+          <img src={img.link} alt={img.name} />
+          <div className="absolute bottom-5 text-white bg-black bg-opacity-80 p-2 left-1/2 -translate-x-1/2">
+            {img.loc}, {img.desc}
+          </div>
+        </div>
+      ))}
+      <button onClick={rightArrow} className="absolute right-2">
+        <svg
+          width="40px"
+          height="40px"
+          viewBox="0 -4.5 20 20"
+          version="1.1"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          fill="#141414"
+          transform="rotate(90)"
+        >
+          <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+          <g
+            id="SVGRepo_tracerCarrier"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          ></g>
+          <g id="SVGRepo_iconCarrier">
+            <title>arrow_up [#141414]</title> <desc>Created with Sketch.</desc>
+            <defs> </defs>
+            <g
+              id="Page-1"
+              stroke="none"
+              stroke-width="1"
+              fill="none"
+              fill-rule="evenodd"
+            >
+              <g
+                id="Dribbble-Light-Preview"
+                transform="translate(-260.000000, -6684.000000)"
+                fill="#141414"
+              >
+                <g id="icons" transform="translate(56.000000, 160.000000)">
+                  <path
+                    d="M223.707692,6534.63378 L223.707692,6534.63378 C224.097436,6534.22888 224.097436,6533.57338 223.707692,6533.16951 L215.444127,6524.60657 C214.66364,6523.79781 213.397472,6523.79781 212.616986,6524.60657 L204.29246,6533.23165 C203.906714,6533.6324 203.901717,6534.27962 204.282467,6534.68555 C204.671211,6535.10081 205.31179,6535.10495 205.70653,6534.69695 L213.323521,6526.80297 C213.714264,6526.39807 214.346848,6526.39807 214.737591,6526.80297 L222.294621,6534.63378 C222.684365,6535.03868 223.317949,6535.03868 223.707692,6534.63378"
+                    id="arrow_up-[#141414]"
+                  ></path>
+                </g>
+              </g>
+            </g>
+          </g>
+        </svg>
+      </button>
     </div>
   )
 }

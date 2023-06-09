@@ -4,12 +4,14 @@ import Home from './components/home'
 import Gallery from './components/gallery'
 import Donate from './components/donate'
 import Contact from './components/contact'
+import Navbar from './components/stickyNav'
 
 export default function App() {
   return (
     <>
       <Router>
         <Header />
+        <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/contact" element={<Contact />} />
