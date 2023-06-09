@@ -3,7 +3,11 @@ import React from 'react'
 export default function Donate() {
   return (
     <div className="flex flex-col m-10 mb-24 xs:w-[370px] md:w-[800px] mx-auto">
-      <div className="border border-solid m-10 xs:w-[300px] md:w-[500px] mx-auto p-10 text-center rounded-3xl bg-secondary bg-opacity-30">
+      <div className="border border-solid m-10 xs:w-[300px] md:w-[500px] mx-auto p-10 font-semibold text-center rounded-3xl relative">
+        <img
+          src="/donateflower.jpg"
+          className="absolute top-0 left-0 z-[-1] h-full rounded-3xl opacity-20"
+        />
         <h1 className="text-3xl italic mb-3">Donate</h1>
         <div>
           <h3>to support our cause,</h3>
