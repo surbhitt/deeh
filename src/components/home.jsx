@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <div>
       <Carousel />
-      <section className="flex items-center justify-center xs:w-[370px] md:w-[800px] lg:w-[1200px] mx-auto py-10">
+      <section className="flex items-center justify-center xs:w-[370px] md:w-[800px] lg:w-[1200px] mx-auto">
         <img
           src="/homeFlorallt.png"
           className="opacity-70 h-96 xs:hidden sm:hidden md:hidden lg:inline"
@@ -14,10 +14,14 @@ export default function Home() {
           className="absolute opacity-30 h-96 lg:hidden"
         />
         {/*style={{ clipPath: 'inset(0 50% 0 0)' }} */}
-        <div className="w-full lg:w-[800px] mx-3">
-          <h1 className="xs:text-xl md:text-2xl underline underline-offset-4">
-            Our vision and mission
-          </h1>
+        <div className="w-full lg:w-[800px] px-3 bg-white bg-opacity-70 py-10 rounded-xl shadow-xl">
+          <div className="flex items-center justify-center">
+            ✦
+            <h1 className="xs:text-xl md:text-2xl text-center">
+              Our vision and mission
+            </h1>
+            ✦
+          </div>
           <p className="mt-5 xs:text-md md:text-lg text-justify leading-5">
             At Deeh we aim to develop an understanding of our origin. Deeh
             Foundation is committed to the study and promotion of the rich

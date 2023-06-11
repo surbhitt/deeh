@@ -1,13 +1,15 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { BiHomeAlt2 } from 'react-icons/bi'
 import { IoCallOutline } from 'react-icons/io5'
 import { AiOutlineHeart } from 'react-icons/ai'
 import { MdOutlineInsertPhoto } from 'react-icons/md'
+import { NavButton } from './context/navButton'
 
 export default function Navbar() {
   const [stickyClass, setStickyClass] = useState('hidden')
-
+  const { homeButt, contactButt, donateButt, galleryButt, setButtonStatus } =
+    useContext(NavButton)
   let windowHeight = window.scrollY
   let activeButton = ''
   let inactiveButton = ''
@@ -33,44 +35,48 @@ export default function Navbar() {
     {
       label: 'Home',
       route: '/',
+      state: homeButt,
       icon: (
         <BiHomeAlt2
           xs:size={10}
           md:size={20}
-          className="xs:mt-[0.4rem] md:mt-[0.6rem]"
+          className="xs:mt-[0.4rem] md:mt-[0.6rem] lg:mt-[0.7rem]"
         />
       ),
     },
     {
       label: 'Contact',
       route: '/contact',
+      state: contactButt,
       icon: (
         <IoCallOutline
           xs:size={10}
           md:size={20}
-          className="xs:mt-[0.4rem] md:mt-[0.6rem]"
+          className="xs:mt-[0.4rem] md:mt-[0.6rem] lg:mt-[0.7rem]"
         />
       ),
     },
     {
       label: 'Donate',
       route: '/donate',
+      state: donateButt,
       icon: (
         <AiOutlineHeart
           xs:size={10}
           md:size={20}
-          className="xs:mt-[0.4rem] md:mt-[0.6rem]"
+          className="xs:mt-[0.4rem] md:mt-[0.6rem] lg:mt-[0.7rem]"
         />
       ),
     },
     {
       label: 'Gallery',
       route: '/gallery',
+      state: galleryButt,
       icon: (
         <MdOutlineInsertPhoto
           xs:size={10}
           md:size={20}
-          className="xs:mt-[0.4rem] md:mt-[0.6rem]"
+          className="xs:mt-[0.4rem] md:mt-[0.6rem] lg:mt-[0.7rem]"
         />
       ),
     },
@@ -83,7 +89,14 @@ export default function Navbar() {
       {pages.map((link, i) => (
         <div className="flex items-center">
           <Link to={link.route}>
-            <button className="flex justify-center xs:w-20 md:w-32 xs:h-7 md:h-10 xs:text-sm md:text-base border border-primary bg-tertiary-light hover:bg-tertiary-dark rounded-xl">
+            <button
+              onClick={() => setButtonStatus(link.label)}
+              className={`flex justify-center xs:w-20 md:w-32 xs:h-7 md:h-10 xs:text-sm md:text-base ${
+                link.state
+                  ? 'bg-tertiary-dark cursor-default pointer-events-none'
+                  : 'border border-primary bg-tertiary-light'
+              } hover:bg-tertiary-dark rounded-xl`}
+            >
               {link.icon}
               <div className="xs:mt-[0.3rem] md:mt-[0.55rem] ml-2">
                 {link.label}

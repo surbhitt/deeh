@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useContext, usecontext } from 'react'
 import { Link } from 'react-router-dom'
+import { NavButton } from './context/navButton'
 
 export default function Header() {
   return (
@@ -20,11 +21,14 @@ export default function Header() {
 }
 
 function Navbar() {
+  const { homeButt, contactButt, donateButt, galleryButt, setButtonStatus } =
+    useContext(NavButton)
+
   let navlinks = [
-    { label: 'Home', route: '/' },
-    { label: 'Contact', route: '/contact' },
-    { label: 'Donate', route: '/donate' },
-    { label: 'Gallery', route: '/gallery' },
+    { label: 'Home', route: '/', state: homeButt },
+    { label: 'Contact', route: '/contact', state: contactButt },
+    { label: 'Donate', route: '/donate', state: donateButt },
+    { label: 'Gallery', route: '/gallery', state: galleryButt },
   ]
   return (
     <nav className="flex w-full justify-center">
@@ -35,15 +39,22 @@ function Navbar() {
         className="xs:hidden md:block h-7 scale-x-[-1]"
       />
       <ul className="flex mt-2 items-center justify-center w-fit">
-        {navlinks.map((item, i) => (
+        {navlinks.map((button, i) => (
           <li className="xs:w-20 md:w-32 text-center ">
-            <Link to={item.route} className="formatflex justify-center">
+            <Link to={button.route} className="formatflex justify-center">
               <button
                 key={i}
-                className="p-2 md:w-20 hover:bg-tertiary-dark rounded-md"
+                onClick={() => setButtonStatus(button.label)}
+                className={`p-2 md:w-20 rounded-md ${
+                  button.state ? 'cursor-default' : 'hover:bg-tertiary-dark'
+                }`}
               >
-                <h3 className="underline underline-offset-8 text-md">
-                  {item.label}
+                <h3
+                  className={`rounded-md ${
+                    button.state ? 'underline underline-offset-8' : ''
+                  }`}
+                >
+                  {button.label}
                 </h3>
               </button>
             </Link>
