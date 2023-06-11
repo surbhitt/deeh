@@ -30,7 +30,7 @@ function Navbar() {
     <nav className="flex w-full justify-center">
       {/* md:inline */}
       <img
-        src="/divider1.png"
+        src="/divider.png"
         alt="divider"
         className="xs:hidden md:block h-7 scale-x-[-1]"
       />
@@ -51,7 +51,7 @@ function Navbar() {
         ))}
       </ul>
       <img
-        src="/divider1.png"
+        src="/divider.png"
         alt="divider"
         className="xs:hidden md:block h-7"
       />

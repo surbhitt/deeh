@@ -14,10 +14,10 @@ export default function Navbar() {
 
   useEffect(() => {
     const stickNavbar = () => {
-      const viewportHeight = 130
+      const height = 150
       const currentScrollPostion = window.scrollY
       if (window !== undefined) {
-        currentScrollPostion > viewportHeight
+        currentScrollPostion > height
           ? setStickyClass('fixed top-0 z-50')
           : setStickyClass('hidden')
       }
