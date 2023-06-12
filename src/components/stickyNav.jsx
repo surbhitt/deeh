@@ -93,7 +93,7 @@ export default function Navbar() {
               onClick={() => setButtonStatus(link.label)}
               className={`flex justify-center xs:w-20 md:w-32 xs:h-7 md:h-10 xs:text-sm md:text-base ${
                 link.state
-                  ? 'bg-tertiary-dark cursor-default pointer-events-none'
+                  ? 'bg-tertiary-dark cursor-default'
                   : 'border border-primary bg-tertiary-light'
               } hover:bg-tertiary-dark rounded-xl`}
             >

@@ -1,6 +1,24 @@
 import React from 'react'
+import {
+  EmailShareButton,
+  EmailIcon,
+  WhatsappShareButton,
+  WhatsappIcon,
+  FacebookShareButton,
+  FacebookIcon,
+  FacebookMessengerShareButton,
+  FacebookMessengerIcon,
+  TwitterShareButton,
+  TwitterIcon,
+  TelegramShareButton,
+  TelegramIcon,
+} from 'react-share'
 
 export default function Donate() {
+  let imageSrc = '/Donate_to_Deeh.webp'
+  let note =
+    'Consider donating to DeehFoundation, scan the QRcode using any digital wallet'
+
   return (
     <div className="flex flex-col m-10 mb-24 xs:w-[370px] md:w-[800px] mx-auto">
       <div className="border border-solid m-10 xs:w-[300px] md:w-[500px] mx-auto p-10 font-semibold text-center rounded-3xl relative">
@@ -24,6 +42,12 @@ export default function Donate() {
       <button className="w-28 border border-solid border-zinc-600 rounded-md p-2 mx-auto">
         share
       </button>
+      <FacebookShareButton url={imageSrc} quote={note}>
+        <FacebookIcon size={32} round />
+      </FacebookShareButton>
+      <TwitterShareButton url={imageSrc} quote={note}>
+        <TwitterIcon size={32} round />
+      </TwitterShareButton>
     </div>
   )
 }
