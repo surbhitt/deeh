@@ -1,13 +1,10 @@
 import React from 'react'
+import { MdDownloading } from 'react-icons/md'
 import {
-  EmailShareButton,
-  EmailIcon,
   WhatsappShareButton,
   WhatsappIcon,
   FacebookShareButton,
   FacebookIcon,
-  FacebookMessengerShareButton,
-  FacebookMessengerIcon,
   TwitterShareButton,
   TwitterIcon,
   TelegramShareButton,
@@ -15,7 +12,7 @@ import {
 } from 'react-share'
 
 export default function Donate() {
-  let imageSrc = '/Donate_to_Deeh.webp'
+  let imageSrc = 'https://imgur.com/a/LF92hLA'
   let note =
     'Consider donating to DeehFoundation, scan the QRcode using any digital wallet'
 
@@ -24,7 +21,7 @@ export default function Donate() {
       <div className="border border-solid m-10 xs:w-[300px] md:w-[500px] mx-auto p-10 font-semibold text-center rounded-3xl relative">
         <img
           src="/donateFlower.jpg"
-          className="absolute top-0 left-0 z-[-1] h-full rounded-3xl opacity-20"
+          className="absolute top-0 left-0 z-[-1] h-full w-full object-cover rounded-3xl opacity-20"
         />
         <h1 className="text-3xl italic mb-3">Donate</h1>
         <div>
@@ -39,15 +36,27 @@ export default function Donate() {
           <p>Karnataka Bank</p>
         </div>
       </div>
-      <button className="w-28 border border-solid border-zinc-600 rounded-md p-2 mx-auto">
-        share
-      </button>
-      <FacebookShareButton url={imageSrc} quote={note}>
-        <FacebookIcon size={32} round />
-      </FacebookShareButton>
-      <TwitterShareButton url={imageSrc} quote={note}>
-        <TwitterIcon size={32} round />
-      </TwitterShareButton>
+
+      <div className="flex flex-col mt-10 justify-center items-center">
+        <p>~~~~~~~~~~~~share~~~~~~~~~~~~</p>
+        <div className="flex justify-between mt-5 w-52">
+          <a href={imageSrc}>
+            <MdDownloading size={32} />
+          </a>
+          <FacebookShareButton url={imageSrc} quote={note}>
+            <FacebookIcon size={32} round />
+          </FacebookShareButton>
+          <TwitterShareButton url={imageSrc} quote={note}>
+            <TwitterIcon size={32} round />
+          </TwitterShareButton>
+          <WhatsappShareButton url={imageSrc} quote={note}>
+            <WhatsappIcon size={32} round />
+          </WhatsappShareButton>
+          <TelegramShareButton url={imageSrc} quote={note}>
+            <TelegramIcon size={32} round />
+          </TelegramShareButton>
+        </div>
+      </div>
     </div>
   )
 }

@@ -61,7 +61,7 @@ export default function Contact() {
   return (
     <div className="xs:w-[370px] md:w-[800px] mx-auto mt-10 xs:mb-10 md:mb-0 xs:p-2 md:p-10">
       <table className="mx-auto rounded-lg bg-tertiary-dark bg-opacity-30">
-        <tr className="">
+        <tr>
           <td className="xs:px-2 md:px-8 py-4 text-xs md:text-base text-center border-r-2 border-zinc-600 border-solid">
             Call
           </td>
