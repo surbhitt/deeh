@@ -17,4 +17,6 @@ A website made with react and tailwind css.
 
 ### Screenshots
 
-
+![deeh home page](assets/deehHome.png)
+![deeh contact page](assets/deehContact.png)
+![deeh donate page](assets/deehDonate.png)
